@@ -1,0 +1,160 @@
+:root {
+    --pink: #78156b;
+    --black: #252a34;
+    --bluelight: #15a4bc;
+    --white: #eaeaea;
+    --title: 35px;
+    --text: 19px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+ /* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+  }
+    
+  .container {
+    display: flex; 
+    align-items: center;
+  }
+  .container .logo {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 10px;
+    background: url(../imagenes/logotipo.jpg) center/contain no-repeat;
+  }
+  .container .logo h1 a {
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 100;
+    color: var(--pink);
+    margin: 0;
+  }
+
+/* Menú de navegación */
+.menu .lista-conten {
+    margin-right: 20px;
+  }
+  .menu .lista-conten ul {
+    display: flex;
+  }
+  .menu .lista-conten ul li {
+    list-style: none;
+  }
+  .menu .lista-conten ul li a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: var(--black);
+    font-size: 16px;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  .menu .lista-conten ul li a:hover {
+    background-color: var(--pink);
+    color: #fff;
+  }
+  .menu .lista-conten ul li a.activo {
+    background-color: var(--pink);
+    color: #fff;
+  }
+
+/* Formulario de presupuesto */
+#formulario-presupuesto {
+    background-color: #fff;
+    margin: 150px auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+#formulario-presupuesto h1 {
+    text-align: center;
+}
+
+#formPresupuesto label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#formPresupuesto input[type="text"],
+#formPresupuesto input[type="email"],
+#formPresupuesto input[type="number"],
+#formPresupuesto select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 3px solid #ccc;
+    border-radius: 7px;
+}
+
+#formPresupuesto input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#formPresupuesto button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+#formPresupuesto button:hover {
+    background-color: #555;
+}
+
+/* Pie de página */
+.redes-sociales {
+    position: flex;
+    bottom: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 10px;
+    display: flex; 
+}
+  .redes-sociales a {
+    margin-right: 10px; 
+  }
+  
+  .redes-sociales img {
+    width: 50px; 
+    height: auto; 
+  }
+  
+  footer:last-child .redes-sociales {
+    display: flex;
+  }
+  .redes-sociales img:hover {
+    transform: scale(1.4); 
+  } 
+ 

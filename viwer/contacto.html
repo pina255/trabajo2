@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto para Okami Grabados">
+    <meta name="author" content="Okami Grabados">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="icon" href="../imagenes/logotipo.jpg" type="image/jpg">
+    <title>Contacto</title>
+</head>
+<body>
+    <header id="contacto">
+        <nav class="menu">
+            <div class="container">
+                <div class="logo"></div>
+                <h2>Okami Grabados</h2>
+            </div>
+            <div class="lista-conten">
+                <ul class="lista">
+                    <li><a href="contacto.html" class="activo">Contacto</a></li>
+                    <li><a href="/OKAMIWEB/trabajo final/index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="imagenes-header">
+        <div class="bienvenido">
+            <h1>Bienvenidos a Okami</h1>
+            <button onclick="document.getElementById('contacto2').scrollIntoView();">Ver abajo</button>
+        </div>
+    </div>
+    
+    <div class="bisel-abajo"></div>
+
+
+    <footer class="footer" id="contacto2">
+        <div class="degr-formu"></div>
+        <div class="ejez">
+            <div class="f-container">
+                <div class="f-title">
+                    <h1>Formulario de contacto</h1>
+                    <hr>
+                </div>
+                <div class="formulario">
+                    <form id="formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Ingrese un nombre válido (solo letras y espacios)" required>
+
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="Escribe tu correo electrónico" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Ingrese un correo electrónico válido" required>
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje"></textarea>
+
+                        <fieldset id="condiciones-envio">
+                            <label><input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones</label>
+                            <button type="submit">Enviar</button>
+                            <button type="reset">Restablecer</button>
+                        </fieldset>
+                    </form>
+                    <div id="error-checkbox" class="error-message" style="display: none;">Por favor, acepta la política de privacidad.</div>
+                </div>
+
+                
+    <!-- Sección del mapa -->
+    <section id="mapa">
+        <h2>Nuestra ubicación en Muchamiel</h2>
+        <div id="map"></div> <!-- Aquí se insertará el mapa -->
+    </section>
+
+                <div class="redes-sociales">
+                    <a href="https://www.instagram.com/okami.laser/" target="_blank"><img src="../imagenes/redes-sociales/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/tu_cuenta_de_facebook" target="_blank"><img src="../imagenes/redes-sociales/facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com/tu_cuenta_de_twitter" target="_blank"><img src="../imagenes/redes-sociales/gorjeo.png" alt="Twitter"></a>
+                </div>
+                <div>
+                    <p>&copy; Okami - 2024 | Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+      <!-- Enlace al archivo JS para manejar el mapa -->
+      <script src="../javascript/mapa.js"></script>
+      <script src="../javascript/contacto.js"></script>
+
+</body>
+</html>

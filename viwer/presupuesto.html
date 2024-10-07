@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - Okami Grabados</title>
+    <link rel="stylesheet" href="../css/presupuesto.css">
+    <link rel="icon" href="../imagenes/logotipo.jpg" type="image/jpg">
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="../javascript/presupuestos.js" defer></script>
+</head>
+<body>
+    <header id="inicio">
+        <nav class="menu">
+            <div class="container">
+                <div class="logo"></div>
+                <h2>Okami Grabados</h2>
+            </div>
+            <div class="lista-conten">
+                <ul class="lista">
+                    <li><a href="presupuesto.html" class="activo">Presupuesto</a></li>
+                    <li><a href="/OKAMI WEB/trabajo final/index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formulario-presupuesto">
+            <h1>Formulario de Presupuesto</h1>
+            <form id="formPresupuesto" action="procesar_presupuesto.php" method="POST">
+                <fieldset id="datos-contacto">
+                    <legend>Datos de Contacto</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" maxlength="15" required
+                           pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" 
+                           title="Ingrese un nombre válido (solo letras y espacios)">
+
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" maxlength="40" required
+                           pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" 
+                           title="Ingrese apellidos válidos (solo letras y espacios)">
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" maxlength="9" required
+                           pattern="\d{9}" 
+                           title="Ingrese un teléfono válido (solo números y 9 dígitos)">
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required
+                           pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
+                           title="Ingrese un correo electrónico válido">
+                </fieldset>
+
+                <fieldset id="presupuesto">
+                    <legend>Presupuesto</legend>
+                    <label for="producto">Producto:</label>
+                    <select id="producto" name="producto" required>
+                        <option value="10">Producto 1 - 10€</option>
+                        <option value="19">Producto 2 - 19€</option>
+                        <option value="25">Producto 3 - 25€</option>
+                    </select>
+
+                    <label for="plazo">Plazo (meses):</label>
+                    <input type="number" id="plazo" name="plazo" min="1" max="36" value="1" required>
+
+                    <h4>Extras:</h4>
+                    <label><input type="checkbox" name="extra" value="5"> Extra 1 - 5€</label>
+                    <label><input type="checkbox" name="extra" value="10"> Extra 2 - 10€</label>
+                    <label><input type="checkbox" name="extra" value="15"> Extra 3 - 15€</label>
+
+                    <h4>Presupuesto Final: <span id="presupuestoFinal">0€</span></h4>
+                </fieldset>
+
+                <fieldset id="condiciones-envio">
+                    <label><input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones</label>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Síguenos en:</p>
+        <div class="social-icons">
+            <!-- Iconos de redes sociales -->
+        </div>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/okami.laser/" target="_blank"><img src="../imagenes/redes-sociales/instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/tu_cuenta_de_facebook" target="_blank"><img src="../imagenes/redes-sociales/facebook.png" alt="Facebook"></a>
+            <a href="https://twitter.com/tu_cuenta_de_twitter" target="_blank"><img src="../imagenes/redes-sociales/gorjeo.png" alt="Twitter"></a>
+        </div>
+        <div>
+            <p>&copy; Okami - 2024 | Todos los derechos reservados </p>
+        </div>
+    </footer>
+</body>
+</html>

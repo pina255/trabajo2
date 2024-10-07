@@ -1,0 +1,225 @@
+
+  :root {
+    --pink: #78156b;
+    --black: #252a34;
+    --bluelight: #15a4bc;
+    --white: #eaeaea;
+    --title: 35px;
+    --text: 19px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'sans-serif';
+    background-color: #f5f2f2;
+    overflow-x: hidden;
+    color: rgb(136, 29, 104);
+  }
+  #contacto {
+    position: relative;
+    width: 100%;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+  }
+  .container {
+    display: flex; 
+    align-items: center;
+  }
+  .container .logo {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 10px;
+    background: url(../imagenes/logotipo.jpg) center/contain no-repeat;
+  }
+  .container .logo h1 a {
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 100;
+    color: var(--pink);
+    margin: 0;
+  }
+  .menu .lista-conten {
+    margin-right: 20px;
+  }
+  .menu .lista-conten ul {
+    display: flex;
+  }
+  .menu .lista-conten ul li {
+    list-style: none;
+  }
+  .menu .lista-conten ul li a {
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: var(--black);
+    font-size: 16px;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  .menu .lista-conten ul li a:hover {
+    background-color: var(--pink);
+    color: #fff;
+  }
+  .menu .lista-conten ul li a.activo {
+    background-color: var(--pink);
+    color: #fff;
+  }
+  .footer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .footer .degr-formu {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: #ededf1;
+  }
+  .footer .ejez {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .footer .f-container {
+    padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 100px;
+  }
+  .footer .ejez .f-container .f-title {
+    width: 50%;
+    margin: auto;
+    border: 2px solid #1b1919;
+    padding: 15px;
+  }
+  .footer .ejez .f-container .f-title .h1 {
+    margin: auto;
+    font-size: 2rem;
+    color: #020202;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .footer .ejez .f-container .f-title .hr {
+    height: 3px;
+    background-color: #1f1f1f;
+    width: 80%;
+    margin: auto;
+  }
+  .footer .ejez .f-container .formulario {
+    width: 60%;
+    margin: 50px auto;
+    background-color: rgb(245, 240, 240);
+    border-radius: 50px;
+    border: 1.7px solid var(--pink);
+    padding: 30px;
+  }
+  .footer .ejez .f-container .formulario #formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer .ejez .f-container .formulario #formulario label {
+    font-size: 20px;
+    text-align: center;
+    color: var(#080606);
+    margin: 30px 0px 10px 0px;
+  }
+  .footer .ejez .f-container .formulario #formulario input {
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    border-radius: 5px;
+    border: 1.5px solid var(--pink);
+    text-align: center;
+    font-size: 18px;
+    color: var(--black);
+  }
+  .footer .ejez .f-container .formulario #formulario textarea {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    border-radius: 5px;
+    border: 1.5px solid var(--pink);
+    text-align: center;
+    font-size: 15px;
+    color: #080808;
+  }
+  /* Estilos para el contenedor del formulario */
+#condiciones-envio {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* Estilos para las etiquetas y los campos de entrada */
+#condiciones-envio label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+  
+  .footer .ejez .f-container .formulario #formulario .enviar:hover {
+    background-color: var(--bluelight);
+  }
+  .footer .ejez .f-container .formulario #formulario p {
+    font-size: 20px;
+    color: var(--black);
+    line-height: 40px;
+  }
+
+  #map {
+    height: 20px; /* Ajusta la altura del mapa según sea necesario */
+    width: 50%;   /* Ocupa todo el ancho del contenedor */
+    margin: 10px 0; /* Margen para separar del resto del contenido */
+}
+
+.redes-sociales {
+    position: flex;
+    bottom: 0; 
+    left: 0; 
+    width: 100%;
+    padding: 10px;
+    display: flex; 
+}
+  .redes-sociales a {
+    margin-right: 10px; 
+  }
+  
+  .redes-sociales img {
+    width: 50px; 
+    height: auto; 
+  }
+  
+  footer:last-child .redes-sociales {
+    display: flex;
+  }
+  .redes-sociales img:hover {
+    transform: scale(1.4); 
+  } 
+ 

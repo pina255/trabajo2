@@ -1,0 +1,417 @@
+:root{
+    --pink:#78156b; 
+    --black:#252a34;
+    --bluelight:#15a4bc;
+    --white:#eaeaea;
+    --title:35px;
+    --text:19px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'sans-serif';
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+/** Bisel**/
+
+.bisel-abajo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 10vh 100vw;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+}
+.bisel-arriba{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 10vh 100vw 0 0;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+}
+/** Menu navegacion **/
+
+#inicio{
+    position:relative;
+    width: 100%;
+}
+
+.menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100px;
+    background-color: #fff;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+.container {
+    display: flex; 
+    align-items: center;
+}
+
+.container .logo {
+    width: 100px; /* Ancho del logotipo */
+    height: 100px; /* Altura del logotipo */
+    margin-right: 10px;
+    background: url(../imagenes/logotipo.jpg) center/contain no-repeat;;
+}
+.container .logo h1 a{
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 100;
+    color: var(--pink);
+    margin: 0;
+}
+
+.menu .lista-conten{
+    margin-right: 20px;
+}
+
+.menu .lista-conten ul{
+    display: flex;
+}
+.menu .lista-conten ul li{
+    list-style: none;
+}
+.menu .lista-conten ul li a{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: var(--black);
+    font-size: 16px;
+    border-radius: 24px;
+    transition: 0.3s;
+}
+.menu .lista-conten ul li a:hover{
+    background-color: var(--pink);
+    color:#fff;
+}
+.menu .lista-conten ul li a.activo{
+    background-color: var(--pink);
+    color:#fff;
+}
+
+/** Imagen Header **/
+
+.imagenes-header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../imagenes/principal.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+.imagenes-header .bienvenido{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0,6);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imagenes-header .bienvenido h1{
+    font-size: 60px;
+    color:var(--white);
+    margin-top: 200;
+}
+.imagenes-header .bienvenido p{
+    font-size: 20px;
+    color:var(--white);
+    margin-top: 20px;
+}
+.imagenes-header .bienvenido > button{
+    width: 170px;
+    height: 40px;
+    background-color: var(--pink);
+    border-radius: 24px;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: 0,5s;
+    text-align: center;
+    font-size: 22px;
+}
+.imagenes-header .bienvenido > button:hover{
+    background-color: var(--bluelight)
+}
+
+/** Nosotros**/
+
+.nosotros{
+    width: 100%;
+    margin-top: 120px;   
+}
+.nosotros .n-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.nosotros .n-container h2{
+    font-size: 3rem;
+    font-style: 400;
+    color: var(--black);
+    text-align: center;
+    margin-top: 20px;
+}
+.nosotros .n-container p{
+    text-align: center;
+    font-size: 1rem;
+    color: var(--black);
+    line-height: 35px;
+    margin: 10px 0;
+}
+.nosotros .n-container .n-galeria{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+.nosotros .n-container .n-galeria img{
+    width: calc(60% - 30px);
+    height: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nosotros .n-container .n-boton{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color:var(--pink);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: auto;
+}
+.nosotros .n-container .n-boton:hover{
+    background-color: var(--bluelight);
+}
+/******PROYECTO**********/
+.proyectos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../imagenes/principal.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 100px;
+}
+.proyectos .degr-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: rgba(0,0,0,0.8);   
+}
+
+.proyectos .ejez{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.proyectos .p-container{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.proyectos .p-container .p-title{
+    border: 2px solid #fff;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+.proyectos .p-container .p-title h2{
+    font-size: 2rem;
+    color: #fff;
+}
+.proyectos .p-container .p-title hr{
+    border-left-color: #fff;
+    width: 50%;
+    height: 3px;
+    margin: 10px;
+    margin: auto;
+}
+.proyectos .p-container .p-galeria{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    padding-bottom: 50px;
+}
+.proyectos .p-container .p-galeria img{
+    width: calc(30% - 20px);
+    margin: 30px;
+    border-radius: 100px;
+    height: 550px;
+    border-radius: 120px;
+    cursor: pointer;
+}
+/*************Contacto**************/
+.footer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.footer .degr-formu{
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: #252a34;
+}
+.footer .ejez{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.footer .f-container{
+    padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 100px;
+}
+.footer .ejez .f-container .f-title{
+    width: 50%;
+    margin: auto;
+    border: 2px solid #fff;
+    padding: 15px;
+    
+}
+.footer .ejez .f-container .f-title .h1{
+    margin: auto;
+    font-size: 2rem;
+    color: #252a34;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.footer .ejez .f-container .f-title .hr{
+    height: 3px;
+    background-color:  #fff;
+    width: 80%;
+    margin: auto;
+}
+.footer .ejez .f-container .formulario{
+    width: 60%;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 1.7px solid var(--pink);
+    padding: 30px;
+}
+.footer .ejez .f-container .formulario #formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer .ejez .f-container .formulario #formulario label{
+    font-size: 20px;
+    text-align: center;
+    color: var(--black);
+    margin: 30px 0px 10px 0px;
+}
+.footer .ejez .f-container .formulario #formulario input{
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    border-radius: 5px;
+    border: 1.5px solid var(--pink);
+    text-align: center;
+    font-size: 18px;
+    color: var(--black);
+}
+.footer .ejez .f-container .formulario #formulario textarea{
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    border-radius: 5px;
+    border: 1.5px solid var(--pink);
+    text-align: center;
+    font-size: 15px;
+    color: #252a34;
+}
+.footer .ejez .f-container .formulario #formulario .enviar{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    background-color: var(--pink);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.footer .ejez .f-container .formulario #formulario .enviar:hover{
+    background-color: var(--bluelight);
+}
+.footer .ejez .f-container .formulario #formulario p{
+    font-size: 20px;
+    color: var(--black);
+    line-height:40px;
+
+}
+.redes-sociales {
+    position: flex; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 10px; 
+    display: flex; 
+  }
+  
+  .redes-sociales a {
+    margin-right: 10px;
+  }
+  
+  .redes-sociales img {
+    width: 50px; 
+    height: auto; 
+  }
+  
+  /*****Mostrar redes sociales al llegar al footer *****/
+  footer:last-child .redes-sociales {
+    display: flex;
+  }
+  .redes-sociales img:hover {
+    transform: scale(1.4); 
+  }
+  
+  
