@@ -194,9 +194,10 @@
   }
 
   #map {
-    height: 20px; /* Ajusta la altura del mapa según sea necesario */
-    width: 50%;   /* Ocupa todo el ancho del contenedor */
-    margin: 10px 0; /* Margen para separar del resto del contenido */
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
 }
 
 .redes-sociales {

@@ -1,14 +1,37 @@
-  // Crear el mapa centrado en Muchamiel
-  var map = L.map('map').setView([38.4152, -0.4459], 13);  // Coordenadas de Muchamiel
+let options={
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximunAge: 0
+}
 
-  // Añadir capa de OpenStreetMap
-  L.tileLayer('https://.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: "Mi openStreetMap"
-  }).addTo(map);
 
-  // Añadir un marcador en Muchamiel
-  var marker = L.marker([38.4152, -0.4459]).addTo(map);
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      success,
+      error,
+      options
+    );
 
-  // Añadir un cuadro emergente al marcador
-  marker.bindPopup("<b>Muchamiel</b><br>Alicante, España.").openPopup();
+  }else{
+    alert("los servicios de geolocalización no están disponibles");
+  }
+
   
+  
+  
+  function success(positon){
+      let latitude = positon.coords.latitude;
+      let longitude = positon.coords.longitude;
+
+      let map = L.map("map" ,{
+        center:[latitude,longitude],
+        zoom: 14
+      })
+
+      L.titleLayer("https://title.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"Mi openStreetMap"}).addTo(map)
+
+     }
+
+     function error(){
+
+     }
