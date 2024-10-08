@@ -30,8 +30,23 @@ if(navigator.geolocation){
 
       L.titleLayer("https://title.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"Mi openStreetMap"}).addTo(map)
 
+      let control = L.Routing.control({
+        waypoints:[
+          L.latLng(latitude, longitude),
+          L.latLng(38.412429, -0.442176)
+        ],
+        language: "es",
+
+      }).addTo(map);
+
      }
 
      function error(){
+        let map= L.map("map",{
+          center:[38.412429, -0.442176],
+          zoom: 14
+        })
+
+        .titleLayer("https://title.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"Mi openStreetMap"}).addTo(map)
 
      }
