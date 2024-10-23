@@ -25,25 +25,43 @@ if(navigator.geolocation){
 
       let map = L.map("map" ,{
         center:[latitude,longitude],
-        zoom: 14
+        zoom: 11
       })
 
-      L.titleLayer("https://title.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"Mi openStreetMap"}).addTo(map)
-
-      let control = L.Routing.control({
-        waypoints:[
-          L.latLng(latitude, longitude),
-          L.latLng(38.412429, -0.442176)
-        ],
-        language: "es",
-
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-
+      var marker = L.marker([38.409684, -0.441105]).addTo(map);
      }
+
+     var circle = L.circle([38.409684, -0.441105], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+  }).addTo(map);
+
+  var polygon = L.polygon([
+    [38.409684, -0.441105],
+    [38.409684, -0.441105],
+    [38.409684, -0.441105]
+]).addTo(map);
+
+
+marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+
+
+var popup = L.popup()
+    .setLatLng([38.409684, -0.441105])
+    .setContent("I am a standalone popup.")
+    .openOn(map);
 
      function error(){
         let map= L.map("map",{
-          center:[38.412429, -0.442176],
+          center:[38.409684, -0.441105],
           zoom: 14
         })
 
