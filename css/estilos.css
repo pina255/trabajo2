@@ -295,6 +295,7 @@ body{
     height: 100%;
 }
 .llavero .llaveros .v-title{
+    font-family: Arial, sans-serif;
     font-size: 5rem;
     color: var(--pink);
     text-align: center;
@@ -316,13 +317,56 @@ body{
     margin-top: 60px;
     padding-bottom: 50px;
 }
-.llavero .llaveros .l-galeria .img{
-    width: calc(20% - 30px);
-    height: 400px;
-    margin: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-  
+.llavero .llaveros .l-galeria img{
+    width: 700px; 
+    height: 800px;
+    margin: 80px; 
+    border-radius: 60px;
+    
+   
+}
+/*************fundas**************/
+.funda{
+    width: 100%;
+    margin-top: 120px; 
+}
+.funda .fundas{
+   
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.funda .fundas .f-title{
+    font-family: Arial, sans-serif;
+    font-size: 5rem;
+    color: var(--pink);
+    text-align: center;
+    margin-top: 40px;
+       
+}
+.funda .fundas .f-title .h2{
+    font-family: Arial, sans-serif;
+    font-size: 5rem;  
+    color: var(--pink);
+    text-align: center;
+    margin-top: 20px;
+
+}
+.funda .fundas .f-galeria{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    padding-bottom: 50px;
+}
+.funda .fundas .f-galeria img{
+    width: 700px; 
+    height: 800px;
+    margin: 80px; 
+    border-radius: 60px;
+    
+   
 }
 
 /*************Contacto**************/
@@ -353,32 +397,33 @@ body{
     padding-bottom: 100px;
 }
 .footer .ejez .f-container .f-title{
+    font-family: Arial, sans-serif;
     width: 50%;
     margin: auto;
-    border: 2px solid #fff;
+    border: 40px solid #fff;
     padding: 15px;
     
 }
 .footer .ejez .f-container .f-title .h1{
     margin: auto;
-    font-size: 2rem;
+    font-size: 4rem;
     color: #252a34;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 .footer .ejez .f-container .f-title .hr{
-    height: 3px;
+    height: 5px;
     background-color:  #fff;
     width: 80%;
     margin: auto;
 }
 .footer .ejez .f-container .formulario{
-    width: 60%;
-    margin: 50px auto;
+    width: 70%;
+    margin: 70px auto;
     background-color: #fff;
-    border-radius: 50px;
+    border-radius: 70px;
     border: 1.7px solid var(--pink);
-    padding: 30px;
+    padding: 50px;
 }
 .footer .ejez .f-container .formulario #formulario{
     display: flex;
@@ -393,27 +438,27 @@ body{
 }
 .footer .ejez .f-container .formulario #formulario input{
     width: 90%;
-    height: 40px;
+    height: 70px;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 7px;
     border: 1.5px solid var(--pink);
     text-align: center;
-    font-size: 18px;
+    font-size: 25px;
     color: var(--black);
 }
 .footer .ejez .f-container .formulario #formulario textarea{
     width: 90%;
     height: 200px;
     margin: auto;
-    border-radius: 5px;
+    border-radius: 7px;
     border: 1.5px solid var(--pink);
     text-align: center;
-    font-size: 15px;
+    font-size: 30px;
     color: #252a34;
 }
 .footer .ejez .f-container .formulario #formulario .enviar{
-    width: 120px;
-    height: 40px;
+    width: 140px;
+    height: 50px;
     text-align: center;
     background-color: var(--pink);
     color: #fff;
@@ -425,9 +470,9 @@ body{
     background-color: var(--bluelight);
 }
 .footer .ejez .f-container .formulario #formulario p{
-    font-size: 20px;
+    font-size: 30px;
     color: var(--black);
-    line-height:40px;
+    line-height:30px;
 
 }
 .redes-sociales {
