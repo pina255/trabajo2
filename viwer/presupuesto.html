@@ -6,8 +6,7 @@
     <title>Presupuesto - Okami Grabados</title>
     <link rel="stylesheet" href="../css/presupuesto.css">
     <link rel="icon" href="../imagenes/logotipo.jpg" type="image/jpg">
-    <!-- Enlace al archivo JavaScript externo -->
-    <script src="../javascript/presupuestos.js" defer></script>
+   
 </head>
 <body>
     <header id="inicio">
@@ -31,7 +30,7 @@
     <main>
         <section id="formulario-presupuesto">
             <h1>Formulario de Presupuesto</h1>
-            <form id="formPresupuesto" action="procesar_presupuesto.php" method="POST">
+            <form id="formPresupuesto" name="formulario" method="POST" action="procesar_presupuesto.php">
                 <fieldset id="datos-contacto">
                     <legend>Datos de Contacto</legend>
                     <label for="nombre">Nombre:</label>
@@ -76,7 +75,7 @@
                 </fieldset>
 
                 <fieldset id="condiciones-envio">
-                    <label><input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones</label>
+                    <input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones</label>
                     <button type="submit">Enviar</button>
                     <button type="reset">Restablecer</button>
                 </fieldset>
@@ -98,5 +97,6 @@
             <p>&copy; Okami - 2024 | Todos los derechos reservados </p>
         </div>
     </footer>
+    <script src="../javascript/presupuestos.js"></script>
 </body>
 </html>
