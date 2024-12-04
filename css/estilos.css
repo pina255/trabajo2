@@ -316,8 +316,10 @@ body{
     flex-wrap: wrap;
     margin-top: 60px;
     padding-bottom: 50px;
+    
 }
 .llavero .llaveros .l-galeria img{
+    margin: auto;
     width: 700px; 
     height: 800px;
     margin: 80px; 
@@ -365,6 +367,7 @@ body{
     height: 800px;
     margin: 80px; 
     border-radius: 60px;
+    margin: auto;
     
    
 }
