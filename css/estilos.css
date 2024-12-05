@@ -284,92 +284,96 @@ body{
     cursor: pointer;
 }
 /*************llaveros**************/
-.llavero{
+
+.llavero {
     width: 100%;
-    margin-top: 120px; 
+    margin-top: 120px;
 }
-.llavero .llaveros{
-   
+
+.llavero .llaveros {
     position: relative;
     width: 100%;
     height: 100%;
 }
-.llavero .llaveros .v-title{
+
+.llavero .llaveros .v-title {
     font-family: Arial, sans-serif;
-    font-size: 5rem;
+    font-size: 3rem; 
     color: var(--pink);
     text-align: center;
     margin-top: 40px;
-       
 }
-.llavero .llaveros .v-title .h2{
-    font-size: 5rem;  
+
+.llavero .llaveros .v-title .h2 {
+    font-family: Arial, sans-serif;
+    font-size: 3rem;
     color: var(--pink);
     text-align: center;
-    margin-top: 20px;
-
+    margin-top: 30px;
 }
-.llavero .llaveros .l-galeria{
+
+/* Galería de llaveros */
+.llavero .llaveros .l-galeria {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    justify-items: center; 
     margin-top: 60px;
     padding-bottom: 50px;
-    
 }
-.llavero .llaveros .l-galeria img{
-    margin: auto;
-    width: 700px; 
-    height: 800px;
-    margin: 80px; 
+
+.llavero .llaveros .l-galeria img {
+    width: 100%; 
+    max-width: 350px; 
+    height: auto; 
     border-radius: 60px;
-    
-   
 }
-/*************fundas**************/
-.funda{
+
+/************* Estilo para fundas *************/
+.funda {
     width: 100%;
-    margin-top: 120px; 
+    margin-top: 120px;
 }
-.funda .fundas{
-   
+
+.funda .fundas {
     position: relative;
     width: 100%;
     height: 100%;
 }
-.funda .fundas .f-title{
+
+.funda .fundas .f-title {
     font-family: Arial, sans-serif;
-    font-size: 5rem;
+    font-size: 3rem; 
     color: var(--pink);
     text-align: center;
     margin-top: 40px;
-       
 }
-.funda .fundas .f-title .h2{
+
+.funda .fundas .f-title .h2 {
     font-family: Arial, sans-serif;
-    font-size: 5rem;  
+    font-size: 3rem; 
     color: var(--pink);
     text-align: center;
     margin-top: 20px;
-
 }
-.funda .fundas .f-galeria{
+
+
+.funda .fundas .f-galeria {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    justify-items: center; 
     margin-top: 60px;
     padding-bottom: 50px;
 }
-.funda .fundas .f-galeria img{
-    width: 700px; 
-    height: 800px;
-    margin: 80px; 
+
+.funda .fundas .f-galeria img {
+    width: 100%; 
+    max-width: 350px; 
+    height: auto; 
     border-radius: 60px;
-    margin: auto;
-    
-   
 }
 
 /*************Contacto**************/

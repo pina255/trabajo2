@@ -1,15 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('formPresupuesto');
 
-    form.addEventListener('input', calcularPresupuesto);
-    form.addEventListener('submit', (e) => {
-        if (!validateContactData()) {
-            e.preventDefault();
-        }
+    // Calcular presupuesto y validar los datos cuando se modifique algún campo
+    form.addEventListener('input', () => {
+        calcularPresupuesto();
+        validateContactData();
     });
 
+    // Validar y procesar el presupuesto sin enviar el formulario (sin recargar la página)
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();  // Evitar que el formulario se envíe (y recargue la página)
+        
+        // Validación
+        if (!validateContactData() || !validarPresupuesto()) {
+            return;  // Si hay errores, no continuar con el proceso
+        }
+
+        // Si todo está correcto, muestra el presupuesto y muestra un mensaje de éxito
+        mostrarPresupuesto();
+        alert("Presupuesto procesado correctamente"); // Puedes reemplazar esto por un mensaje más estilizado en la página
+    });
+
+    // Ejecutar la función de cálculo de presupuesto al cargar la página
     calcularPresupuesto();
 
+    // Validación de los datos del contacto
     function validateContactData() {
         const existingErrorContainer = document.getElementById('errorContainer');
         if (existingErrorContainer) existingErrorContainer.remove();
@@ -26,18 +41,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         const errors = [];
+        const errorsMap = {};
 
-        if (!NOMBRE_REGEX.test(nombre)) errors.push('Ingrese un nombre válido (solo letras y máximo 15 caracteres).');
-        if (!APELLIDOS_REGEX.test(apellidos)) errors.push('Ingrese unos apellidos válidos (solo letras y máximo 40 caracteres).');
-        if (!TELEFONO_REGEX.test(telefono)) errors.push('Ingrese un teléfono válido (solo números y exactamente 9 dígitos).');
-        if (!EMAIL_REGEX.test(email)) errors.push('Ingrese un correo electrónico válido.');
-        if (!condiciones) errors.push('Debe aceptar las condiciones para enviar el formulario.');
+        if (!NOMBRE_REGEX.test(nombre)) {
+            errors.push('Ingrese un nombre válido (solo letras y máximo 15 caracteres).');
+            errorsMap['nombre'] = true;
+        }
+        if (!APELLIDOS_REGEX.test(apellidos)) {
+            errors.push('Ingrese unos apellidos válidos (solo letras y máximo 40 caracteres).');
+            errorsMap['apellidos'] = true;
+        }
+        if (!TELEFONO_REGEX.test(telefono)) {
+            errors.push('Ingrese un teléfono válido (solo números y exactamente 9 dígitos).');
+            errorsMap['telefono'] = true;
+        }
+        if (!EMAIL_REGEX.test(email)) {
+            errors.push('Ingrese un correo electrónico válido.');
+            errorsMap['email'] = true;
+        }
+        if (!condiciones) {
+            errors.push('Debe aceptar las condiciones para enviar el formulario.');
+            errorsMap['condiciones'] = true;
+        }
+
+        highlightInvalidFields(errorsMap);
 
         if (errors.length > 0) {
             displayErrors(errors);
             return false;
         }
         return true;
+    }
+
+    function highlightInvalidFields(errorsMap) {
+        const fields = ['nombre', 'apellidos', 'telefono', 'email', 'condiciones'];
+        fields.forEach((field) => {
+            const input = document.getElementById(field);
+            if (errorsMap[field]) {
+                input.classList.add('invalid');
+            } else {
+                input.classList.remove('invalid');
+            }
+        });
     }
 
     function displayErrors(errors) {
@@ -47,7 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
             errorContainer.id = 'errorContainer';
             form.insertBefore(errorContainer, form.firstChild);
         }
-        errorContainer.innerHTML = errors.join('<br>');
+
+        errorContainer.innerHTML = errors.map((err) => `<p style="color: red;">${err}</p>`).join('');
     }
 
     function calcularPresupuesto() {
@@ -72,5 +118,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (descuento > 0) total -= total * descuento;
 
         document.getElementById('presupuestoFinal').textContent = `${total.toFixed(2)}€`;
+    }
+
+    function validarPresupuesto() {
+        const presupuesto = parseFloat(document.getElementById('presupuestoFinal').textContent.replace('€', ''));
+        const errors = [];
+        
+        if (isNaN(presupuesto) || presupuesto <= 0) {
+            errors.push('El presupuesto final debe ser mayor a 0€.');
+            displayErrors(errors);
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Función para mostrar el presupuesto final
+    function mostrarPresupuesto() {
+        const presupuestoFinal = document.getElementById('presupuestoFinal').textContent;
+        alert(`El presupuesto final es: ${presupuestoFinal}`);
+        // Aquí puedes mostrar el presupuesto de manera más estilizada si lo deseas
     }
 });
